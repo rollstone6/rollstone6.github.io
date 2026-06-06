@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="post-list-container">
+    <h1>{{ .Title }}</h1>
+    <div class="posts-list">
+        {{ range .Pages.ByDate.Reverse }}
+        <article class="post-card">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+                {{ with .Params.tags }}
+                <span class="post-tags">
+                    {{ range . }}
+                    <span class="tag">#{{ . }}</span>
+                    {{ end }}
+                </span>
+                {{ end }}
+            </div>
+            {{ with .Description }}
+            <p class="post-description">{{ . }}</p>
+            {{ else }}
+            <p class="post-description">{{ .Summary | truncate 150 }}</p>
+            {{ end }}
+        </article>
+        {{ end }}
+    </div>
+    {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}

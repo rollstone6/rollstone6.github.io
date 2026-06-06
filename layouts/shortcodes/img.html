@@ -1,0 +1,7 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | default "图片" }}
+{{ $caption := .Get "caption" }}
+<figure class="image-container fade-in">
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy">
+  {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

@@ -1,0 +1,6 @@
+{{ $type := .Get "type" | default "tip" }}
+{{ $title := .Get "title" | default (cond (eq $type "warning") "⚠️ 注意" (cond (eq $type "danger") "🚫 警告" "💡 提示")) }}
+<div class="info-box {{ $type }}">
+  <strong>{{ $title }}</strong>
+  {{ .Inner | markdownify }}
+</div>

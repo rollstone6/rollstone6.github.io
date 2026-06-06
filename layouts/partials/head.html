@@ -1,0 +1,13 @@
+{{- $title := .Site.Title }}
+{{- $description := .Site.Params.description }}
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{- with .Site.Params.keywords }}
+<meta name="keywords" content="{{ delimit . ", " }}">
+{{- end }}
+<link rel="alternate" type="application/rss+xml" title="{{ $title }}" href="{{ "index.xml" | absURL }}">

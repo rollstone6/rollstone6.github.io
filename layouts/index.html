@@ -1,0 +1,46 @@
+{{ define "main" }}
+<section class="home-profile">
+    {{ with .Site.Params.profileMode }}
+    <div class="profile-card">
+        <h1 class="profile-title">{{ .title | markdownify }}</h1>
+        <p class="profile-subtitle">{{ .subtitle | markdownify }}</p>
+        <p class="profile-subtitle">
+            <span id="typed-text" data-phrases='{{ jsonify $.Site.Params.typingPhrases }}'></span><span class="typed-cursor">|</span>
+        </p>
+        <div class="profile-buttons">
+            {{ range .buttons }}
+            <a href="{{ .url }}" class="btn">{{ .name }}</a>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</section>
+
+<section class="recent-posts">
+    <h2>最新文章</h2>
+    <div class="posts-list">
+        {{ range (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+        <article class="post-card fade-in">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+                <span>· 约 {{ .WordCount }} 字</span>
+                <span>· {{ .ReadingTime }} 分钟阅读</span>
+                {{ with .Params.tags }}
+                <span class="post-tags">
+                    {{ range . }}
+                    <span class="tag">#{{ . }}</span>
+                    {{ end }}
+                </span>
+                {{ end }}
+            </div>
+            {{ with .Description }}
+            <p class="post-description">{{ . }}</p>
+            {{ else }}
+            <p class="post-description">{{ .Summary | truncate 150 }}</p>
+            {{ end }}
+        </article>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{- if .IsHome }}
+    <meta name="robots" content="index, follow">
+    {{- end }}
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+    <link rel="icon" href="{{ "images/favicon.ico" | absURL }}">
+    {{- partial "head.html" . -}}
+</head>
+<body>
+    <!-- Reading Progress Bar -->
+    <div id="reading-progress"></div>
+
+    <header class="header">
+        {{- partial "header.html" . -}}
+    </header>
+    <main class="main">
+        {{- block "main" . }}{{ end -}}
+    </main>
+    <footer class="footer">
+        {{- partial "footer.html" . -}}
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="返回顶部">↑</button>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="搜索文章... (Ctrl+K 打开, Esc 关闭)">
+            <div id="search-results">
+                <p class="search-hint">输入关键词搜索文章...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ "js/main.js" | absURL }}"></script>
+    <script>
+        // Dark mode toggle
+        const toggle = document.getElementById('dark-mode-toggle');
+        const html = document.documentElement;
+        if (toggle) {
+            toggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            });
+        }
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+    </script>
+</body>
+</html>
