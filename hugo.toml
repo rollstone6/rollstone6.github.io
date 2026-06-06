@@ -1,0 +1,89 @@
+baseURL = "https://yjyblog.xyz/"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh"
+title = "我的个人网站"
+theme = ""
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = "一个记录技术、生活和思考的个人博客"
+  author = "博主"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+
+  [params.homeInfoParams]
+    Title = "👋 欢迎来到我的个人网站"
+    Content = "这里记录我的技术探索、学习笔记和生活感悟"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/rollstone6"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:hello@yjyblog.xyz"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "https://yjyblog.xyz/index.xml"
+
+[params.profileMode]
+  enabled = true
+  title = "你好，我是一名开发者 👨‍💻"
+  subtitle = "热爱技术，喜欢分享。专注于 Web 开发、系统架构和开源项目。"
+  imageUrl = ""
+  imageTitle = "我的头像"
+
+  [[params.profileMode.buttons]]
+    name = "📝 博客"
+    url = "/posts/"
+
+  [[params.profileMode.buttons]]
+    name = "👤 关于"
+    url = "/about/"
+
+# 打字动画短语 (来自 developer-portfolio 项目)
+typingPhrases = ["全栈开发工程师", "开源爱好者", "技术写作者", "终身学习者", "问题解决者"]
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+      guessSyntax = true
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[menu]
+  [[menu.main]]
+    identifier = "archives"
+    name = "📦 归档"
+    url = "/archives/"
+    weight = 1
+  [[menu.main]]
+    identifier = "posts"
+    name = "📝 博客"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    name = "👤 关于"
+    url = "/about/"
+    weight = 3
+  [[menu.main]]
+    identifier = "search"
+    name = "🔍 搜索"
+    url = "/search/"
+    weight = 4
