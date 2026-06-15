@@ -2,7 +2,7 @@ baseURL = "https://yjyblog.xyz/"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh"
 title = "我的个人网站"
-theme = ""
+theme = "PaperMod"
 [pagination]
   pagerSize = 10
 
@@ -78,10 +78,15 @@ ignoreLogs = ['warning-goldmark-raw-html']
     url = "/posts/"
     weight = 2
   [[menu.main]]
+    identifier = "resume"
+    name = "📄 简历"
+    url = "/resume/"
+    weight = 3
+  [[menu.main]]
     identifier = "about"
     name = "👤 关于"
     url = "/about/"
-    weight = 3
+    weight = 4
   [[menu.main]]
     identifier = "search"
     name = "🔍 搜索"
