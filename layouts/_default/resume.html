@@ -1,0 +1,92 @@
+{{ define "main" }}
+<article class="resume-page">
+    {{ .Content }}
+</article>
+
+<style>
+.resume-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+.resume-page h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+}
+.resume-page h1 small {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    font-weight: 400;
+}
+.resume-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.resume-contact {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--secondary);
+}
+.resume-page h2 {
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.4rem;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+}
+.resume-page h3 {
+    font-size: 1.1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+.resume-page ul {
+    padding-left: 1.5rem;
+}
+.resume-page li {
+    margin-bottom: 0.4rem;
+    line-height: 1.7;
+}
+.resume-page blockquote {
+    border-left: 4px solid var(--primary);
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    background: var(--code-bg);
+    border-radius: 4px;
+    font-style: italic;
+}
+.resume-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+.resume-page table th, .resume-page table td {
+    border: 1px solid var(--border);
+    padding: 0.6rem 1rem;
+    text-align: left;
+}
+.resume-page table th {
+    background: var(--code-bg);
+    font-weight: 600;
+    width: 30%;
+}
+.resume-page hr {
+    margin: 1.5rem 0;
+    border: none;
+    border-top: 1px solid var(--border);
+}
+.resume-page p {
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+}
+@media (max-width: 600px) {
+    .resume-contact {
+        flex-direction: column;
+        gap: 0.3rem;
+        align-items: center;
+    }
+}
+</style>
+{{ end }}
