@@ -2,6 +2,7 @@
 title: "关于我"
 date: 2026-06-02
 draft: false
+description: "关于博主 rollstone6 的个人介绍、技术栈、兴趣方向和联系方式"
 ---
 
 ## 👋 你好！
@@ -45,7 +46,7 @@ draft: false
 
 - **GitHub**: [github.com/rollstone6](https://github.com/rollstone6)
 - **Email**: hello@yjyblog.xyz
-- **Twitter/X**: [@yourhandle](https://x.com)
+- **Twitter/X**: [@rollstone6](https://x.com/rollstone6)
 
 ## 🌟 关于这个网站
 
