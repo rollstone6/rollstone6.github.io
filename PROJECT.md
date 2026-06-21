@@ -37,19 +37,9 @@
 
 ### ❌ 已知问题
 
-1. **Hugo 主题为空** — `hugo.toml` 中 `theme = ""`，没有安装任何主题
-   - 实际通过 `layouts/` 目录自定义模板在本地工作，但 GitHub Actions 上构建失败
-   - 需要明确设置一个主题或确保自定义 layouts 在 CI 中正常工作
+1. **头像图片未设置** — `profileMode.imageUrl` 为空
 
-2. **GitHub Actions 构建失败** — 最后一次部署（2026-06-06）Build 阶段失败
-   - 原因与主题缺失有关
-   - 需要修复后重新推送触发部署
-
-3. **网站无法访问** — yjyblog.xyz 和 rollstone6.github.io 都返回 404
-
-4. **头像图片未设置** — `profileMode.imageUrl` 为空
-
-5. **社交链接** — Twitter/X 链接还是占位符
+2. **社交链接** — Twitter/X 链接还是占位符
 
 ---
 
@@ -106,8 +96,13 @@
 - [x] 验证 yjyblog.xyz 可访问
 - [x] 可选：在 GitHub 验证域名所有权
 
+#### 1.4 修复简历代码块显示问题
+- [x] 去除 Markdown 中 HTML 缩进，避免被 Hugo 解析为代码块
+- [x] 验证简历页面正常渲染
+
 ### Phase 2 — 内容完善
 - [x] 简历页面搭建（2026-06-15）
+- [x] 内容分析优化（2026-06-16）
 - [ ] 设置头像图片
 - [ ] 更新 Twitter/X 社交链接
 - [ ] 完善关于页信息
