@@ -36,7 +36,7 @@ theme = "PaperMod"
 
 [params.profileMode]
   enabled = true
-  title = "你好，我是一名开发者 👨‍💻"
+  title = "你好，我是开发者 👨‍💻"
   subtitle = "热爱技术，喜欢分享。专注于 Web 开发、系统架构和开源项目。"
   imageUrl = ""
   imageTitle = "我的头像"

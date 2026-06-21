@@ -136,3 +136,38 @@
         pre.appendChild(btn);
     });
 })();
+
+// === Mobile Hamburger Menu ===
+(function() {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('nav-menu');
+    const overlay = document.getElementById('nav-overlay');
+    if (!hamburger || !menu) return;
+
+    function toggle() {
+        hamburger.classList.toggle('active');
+        menu.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    function close() {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', toggle);
+    if (overlay) overlay.addEventListener('click', close);
+
+    // Close on link click
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', close);
+    });
+
+    // Close on escape
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && menu.classList.contains('active')) close();
+    });
+})();
