@@ -1,14 +1,15 @@
 baseURL = "https://yjyblog.xyz/"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh"
-title = "我的个人网站"
+title = "YJY Blog - 技术博客 | Web开发与系统架构"
 theme = "PaperMod"
 [pagination]
   pagerSize = 10
 
 [params]
-  description = "一个记录技术、生活和思考的个人博客"
-  author = "博主"
+  description = "一个记录技术、生活和思考的个人博客，专注 Web 开发、系统架构和 AI 应用"
+  author = "YJY"
+  keywords = ["Web开发", "前端技术", "后端技术", "系统架构", "AI应用", "技术博客", "开发者", "程序员", "JavaScript", "Python", "Go", "React", "Vue", "Docker", "Kubernetes", "Hugo", "静态网站"]
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowShareButtons = true
@@ -65,6 +66,12 @@ ignoreLogs = ['warning-goldmark-raw-html']
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
 
 [menu]
   [[menu.main]]

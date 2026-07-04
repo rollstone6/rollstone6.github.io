@@ -1,5 +1,5 @@
 ---
-title: "Hugo 快速入门指南"
+title: "Hugo 快速入门指南 - 从零搭建个人博客"
 date: 2026-06-02
 draft: false
 description: "从零开始学习 Hugo 静态网站生成器，快速搭建你的个人博客"

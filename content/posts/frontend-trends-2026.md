@@ -1,5 +1,5 @@
 ---
-title: "现代前端开发技术趋势 2026"
+title: "2026 现代前端开发技术趋势 - React、Vite、AI 全解析"
 date: 2026-06-02
 draft: false
 description: "探讨 2026 年前端开发领域的最新趋势和技术方向"

@@ -1,5 +1,5 @@
 ---
-title: "欢迎来到我的博客"
+title: "欢迎来到我的博客 - YJY Blog 开篇介绍"
 date: 2026-06-02
 draft: false
 description: "这是第一篇博客文章，介绍这个网站的建立初衷、技术栈和未来计划"
