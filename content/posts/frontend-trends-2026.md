@@ -130,7 +130,7 @@ const response = await generateText({
 ### Core Web Vitals
 
 - LCP (Largest Contentful Paint)
-- FID (First Input Delay)
+- INP (Interaction to Next Paint) — 2024 年起替代 FID 成为核心指标
 - CLS (Cumulative Layout Shift)
 
 ### Edge Computing
@@ -183,3 +183,5 @@ customElements.define('my-component', MyComponent);
 4. **边缘计算** - 更靠近用户的部署
 
 作为开发者，保持学习和适应新技术是非常重要的。选择适合项目的技术，而不是盲目追求最新。
+
+想了解更多关于我的技术栈和工作经历，可以查看我的[个人简历](/resume/)或[关于页面](/about/)。如果你想从零搭建自己的技术博客，推荐阅读我的 [Hugo 快速入门指南](/posts/hugo-quickstart/)。

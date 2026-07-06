@@ -1,0 +1,71 @@
+{{ define "main" }}
+<div class="search-page">
+    <h1 class="search-page-title">🔍 搜索文章</h1>
+    <div class="search-box">
+        <input type="text" id="page-search-input" placeholder="输入关键词搜索..." autofocus>
+    </div>
+    <div id="page-search-results">
+        <p class="search-hint">输入关键词开始搜索所有文章...</p>
+    </div>
+</div>
+<script>
+(function() {
+    const input = document.getElementById('page-search-input');
+    const resultsContainer = document.getElementById('page-search-results');
+    let searchIndex = null;
+
+    async function loadIndex() {
+        try {
+            const response = await fetch('/index.json');
+            searchIndex = await response.json();
+        } catch (e) {
+            resultsContainer.innerHTML = '<p>加载搜索索引失败，请稍后重试。</p>';
+        }
+    }
+
+    function performSearch(query) {
+        if (!searchIndex || !query.trim()) {
+            resultsContainer.innerHTML = '<p class="search-hint">输入关键词开始搜索所有文章...</p>';
+            return;
+        }
+
+        const terms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+        const results = searchIndex.filter(item => {
+            const searchText = [item.title, item.description, ...(item.tags || [])].join(' ').toLowerCase();
+            return terms.every(term => searchText.includes(term));
+        });
+
+        if (results.length === 0) {
+            resultsContainer.innerHTML = '<p>没有找到相关文章，试试其他关键词？</p><p>你可以浏览<a href="/posts/">所有文章</a>或<a href="/archives/">归档页面</a>。</p>';
+            return;
+        }
+
+        let html = '<div class="search-results-list">';
+        html += '<p class="results-count">找到 ' + results.length + ' 篇文章</p>';
+        results.forEach(item => {
+            html += '<article class="search-result-item">';
+            html += '<h2><a href="' + item.url + '">' + item.title + '</a></h2>';
+            if (item.description) {
+                html += '<p class="search-result-desc">' + item.description + '</p>';
+            }
+            html += '<span class="search-result-date">' + item.date + '</span>';
+            if (item.tags && item.tags.length > 0) {
+                html += '<div class="search-result-tags">';
+                item.tags.forEach(tag => {
+                    html += '<span class="tag">' + tag + '</span>';
+                });
+                html += '</div>';
+            }
+            html += '</article>';
+        });
+        html += '</div>';
+        resultsContainer.innerHTML = html;
+    }
+
+    loadIndex();
+    input.addEventListener('input', function(e) {
+        performSearch(e.target.value);
+    });
+})();
+</script>
+{{ end }}
