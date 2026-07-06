@@ -49,7 +49,13 @@ body {
     color: var(--text);
     line-height: 1.7;
     font-size: 16px;
+    overflow-wrap: break-word;
     transition: background var(--transition), color var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -1217,6 +1223,38 @@ html.dark .header {
     .pagination a, .pagination span {
         padding: 0.4rem 0.7rem;
         font-size: 0.82rem;
+    }
+
+    /* Tables - responsive */
+    .post-content table,
+    .about-content table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+    .post-content td,
+    .post-content th {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.82rem;
+    }
+
+    /* About page lists */
+    .about-content ul,
+    .about-content ol {
+        padding-left: 1.2rem;
+    }
+
+    .about-content li {
+        margin: 0.25rem 0;
+        font-size: 0.95rem;
+    }
+
+    /* About page content */
+    .about-content p {
+        font-size: 0.95rem;
+        line-height: 1.7;
     }
 }
 
