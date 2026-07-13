@@ -118,6 +118,46 @@ theme = "PaperMod"
 3. **Netlify** - 简单易用，功能强大
 4. **Cloudflare Pages** - 高性能，免费额度大
 
+### 使用 GitHub Actions 部署到 GitHub Pages
+
+本站使用 GitHub Actions 自动部署到 GitHub Pages，以下是 `.github/workflows/deploy.yml` 的核心配置：
+
+```yaml
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+      - run: hugo --minify
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+```
+
+每次推送代码到 `main` 分支，GitHub Actions 会自动构建并部署最新内容。
+
+### 自定义域名配置
+
+如果你需要使用自定义域名，需要注意以下几点：
+
+1. 在域名 DNS 设置中添加 A 记录，指向 GitHub Pages 的 IP 地址
+2. 在仓库 Settings → Pages 中填写自定义域名
+3. 勾选 "Enforce HTTPS"
+4. 在 `static/` 目录创建 `CNAME` 文件（仅作为备份记录）
+
+> **注意**：在使用 GitHub Actions 部署模式下，`static/CNAME` 文件会被忽略。自定义域名必须在 GitHub Pages 设置页面中配置。
+
 ## 总结
 
 Hugo 是一个强大而简单的工具，非常适合构建个人博客和文档网站。它的速度优势和灵活性使其成为开发者的理想选择。
