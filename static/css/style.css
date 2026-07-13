@@ -812,6 +812,15 @@ html.dark .header {
 @media (max-width: 768px) {
     .hamburger { display: flex; }
 
+    /* Nav logo — truncate long title on mobile */
+    .nav-logo {
+        font-size: 1rem;
+        max-width: 55%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     .nav-menu {
         position: fixed;
         top: 0;
@@ -864,6 +873,37 @@ html.dark .header {
     .nav-overlay.active {
         opacity: 1;
         pointer-events: auto;
+    }
+
+    /* Code copy button — always visible on touch devices */
+    .code-copy-btn {
+        opacity: 0.7;
+        top: 0.4rem;
+        right: 0.4rem;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .post-content pre:hover .code-copy-btn,
+    .post-content pre .code-copy-btn {
+        opacity: 0.7;
+    }
+
+    .post-content pre .code-copy-btn:active {
+        opacity: 1;
+        background: rgba(255,255,255,0.2);
+    }
+
+    /* Archives page title */
+    .archives-page h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .archives-year {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     /* Home page */
