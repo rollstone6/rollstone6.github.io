@@ -158,6 +158,30 @@ jobs:
 
 > **注意**：在使用 GitHub Actions 部署模式下，`static/CNAME` 文件会被忽略。自定义域名必须在 GitHub Pages 设置页面中配置。
 
+## 常见问题与故障排除
+
+在搭建过程中可能会遇到一些常见问题，以下是几个典型场景的解决方案：
+
+### 构建报错 "module not found"
+
+这通常是因为主题 submodule 没有正确初始化：
+
+```bash
+git submodule update --init --recursive
+```
+
+### 本地预览显示空白页
+
+检查 `hugo.toml` 中的 `baseURL` 是否正确。本地预览时 Hugo 会自动替换为 `localhost`，但配置文件中应填写你的实际域名。
+
+### 中文搜索不工作
+
+Hugo 内置搜索对中文支持有限，建议使用 [Fuse.js](https://fusejs.io/) 或 [Pagefind](https://pagefind.app/) 等前端搜索方案。本站使用了基于 JSON 索引的客户端搜索。
+
+### 部署后页面未更新
+
+GitHub Pages 有 CDN 缓存，通常需要等待 5-10 分钟。也可以尝试在 URL 后加 `?v=2` 强制刷新。
+
 ## 总结
 
 Hugo 是一个强大而简单的工具，非常适合构建个人博客和文档网站。它的速度优势和灵活性使其成为开发者的理想选择。

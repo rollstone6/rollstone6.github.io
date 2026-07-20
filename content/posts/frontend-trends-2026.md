@@ -173,9 +173,44 @@ class MyComponent extends HTMLElement {
 customElements.define('my-component', MyComponent);
 ```
 
+## 8. 浏览器新 API
+
+### WebGPU
+
+WebGPU 是 WebGL 的继任者，提供了更现代的 GPU 编程接口：
+
+- 更低的驱动开销
+- 更好的多线程支持
+- 计算着色器（Compute Shaders）
+
+```javascript
+// 获取 GPU 适配器
+const adapter = await navigator.gpu.requestAdapter();
+const device = await adapter.requestDevice();
+
+// 创建计算管线
+const pipeline = device.createComputePipeline({
+  layout: 'auto',
+  compute: { module: shaderModule, entryPoint: 'main' }
+});
+```
+
+### View Transitions API
+
+页面过渡动画变得前所未有的简单：
+
+```javascript
+// 触发视图过渡
+document.startViewTransition(() => {
+  updateTheDOM();
+});
+```
+
+这个 API 让 SPA 和 MPA 都能实现流畅的页面切换效果，极大提升了用户体验。
+
 ## 总结
 
-> 📅 本文最后更新：2026 年 7 月。内容已根据最新技术发展进行了审核和调整。
+> 📅 本文最后更新：2026 年 7 月 20 日。内容已根据最新技术发展进行了审核和调整。
 
 2026 年的前端开发更加注重：
 

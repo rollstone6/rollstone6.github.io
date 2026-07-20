@@ -60,6 +60,12 @@ tags: ["关于", "个人介绍"]
 - 开源项目贡献
 - 技术写作与分享
 
+## 🎯 近期学习方向（2026 下半年）
+
+- **AI 工程化落地** — 探索 LLM 在企业审计场景中的应用，如智能风险评估和自动化报告生成
+- **Rust 与系统编程** — 学习 Rust 构建高性能工具，关注 [WebAssembly](/posts/frontend-trends-2026/) 在浏览器中的应用
+- **安全合规深化** — 深入研究零信任架构和供应链安全，结合 CISSP 知识体系
+
 ## 📫 联系方式
 
 - **GitHub**: [github.com/rollstone6](https://github.com/rollstone6)
