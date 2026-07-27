@@ -208,9 +208,36 @@ document.startViewTransition(() => {
 
 这个 API 让 SPA 和 MPA 都能实现流畅的页面切换效果，极大提升了用户体验。
 
+## 9. AI Agent 与前端融合
+
+2026 年下半年最显著的趋势之一是 AI Agent 在前端应用中的深度集成：
+
+### 对话式 UI
+
+传统的表单交互正在被对话式界面补充甚至替代：
+
+```javascript
+// Vercel AI SDK - 流式 UI
+import { useChat } from 'ai/react';
+
+function ChatUI() {
+  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  return (
+    <form onSubmit={handleSubmit}>
+      <input value={input} onChange={handleInputChange} />
+      {messages.map(m => <div key={m.id}>{m.content}</div>)}
+    </form>
+  );
+}
+```
+
+### Function Calling 驱动的工具链
+
+前端应用通过 Function Calling 将用户意图转化为具体操作（查数据、调 API、生成文件），模糊了"应用"和"助手"的边界。
+
 ## 总结
 
-> 📅 本文最后更新：2026 年 7 月 20 日。内容已根据最新技术发展进行了审核和调整。
+> 📅 本文最后更新：2026 年 7 月 27 日。内容已根据最新技术发展进行了审核和调整。
 
 2026 年的前端开发更加注重：
 
@@ -218,6 +245,7 @@ document.startViewTransition(() => {
 2. **类型安全** - 端到端的类型检查
 3. **开发体验** - 更好的工具和 AI 辅助
 4. **边缘计算** - 更靠近用户的部署
+5. **AI 融合** - Agent 驱动的交互范式
 
 作为开发者，保持学习和适应新技术是非常重要的。选择适合项目的技术，而不是盲目追求最新。
 

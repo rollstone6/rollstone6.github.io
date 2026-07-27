@@ -105,6 +105,7 @@
 - [x] 定时内容优化（2026-07-06）：修复搜索页 404、更新过期指标、补全 frontmatter、增加交叉链接
 - [x] 定时内容优化（2026-07-13）：扩充关于页职业经历、hugo-quickstart 新增部署章节、welcome 添加推荐文章导航、补全归档/搜索页 frontmatter
 - [x] 定时内容优化（2026-07-20）：welcome 新增"技术博客的价值"章节、hugo-quickstart 新增故障排除FAQ、frontend-trends-2026 新增浏览器API章节、about 新增近期学习方向、resume 补全frontmatter
+- [x] 定时内容优化（2026-07-27）：welcome 新增"保持联系"章节、hugo-quickstart 新增进阶优化章节、frontend-trends-2026 新增AI Agent章节、about 新增推荐阅读导航、全站添加最后更新时间
 - [ ] 设置头像图片
 - [ ] 更新 Twitter/X 社交链接
 - [ ] 完善关于页信息
