@@ -906,6 +906,21 @@ html.dark .header {
         margin-bottom: 0.5rem;
     }
 
+    .archives-list a {
+        word-break: break-word;
+    }
+
+    /* Recent posts section heading */
+    .recent-posts h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Home profile spacing */
+    .home-profile {
+        padding: 2rem 0;
+    }
+
     /* Home page */
     .profile-title {
         font-size: 1.35rem;
