@@ -237,8 +237,6 @@ function ChatUI() {
 
 ## 总结
 
-> 📅 本文最后更新：2026 年 7 月 27 日。内容已根据最新技术发展进行了审核和调整。
-
 2026 年的前端开发更加注重：
 
 1. **性能** - 更快的加载和交互
@@ -249,4 +247,16 @@ function ChatUI() {
 
 作为开发者，保持学习和适应新技术是非常重要的。选择适合项目的技术，而不是盲目追求最新。
 
+## 📚 推荐资源
+
+如果你想深入了解上述技术，以下是几个值得关注的资源：
+
+- [MDN Web Docs](https://developer.mozilla.org/) — 最权威的 Web 技术文档
+- [web.dev](https://web.dev/) — Google 的 Web 开发者平台，包含性能优化最佳实践
+- [State of JS](https://stateofjs.com/) — 年度 JavaScript 生态调查
+- [Can I Use](https://caniuse.com/) — 浏览器兼容性查询工具
+- [webgpu.io](https://webgpu.io/) — WebGPU 规范和教程
+
 想了解更多关于我的技术栈和工作经历，可以查看我的[个人简历](/resume/)或[关于页面](/about/)。如果你想从零搭建自己的技术博客，推荐阅读我的 [Hugo 快速入门指南](/posts/hugo-quickstart/)。
+
+> 📅 本文最后更新：2026 年 8 月 3 日。内容已根据最新技术发展进行了审核和调整。
