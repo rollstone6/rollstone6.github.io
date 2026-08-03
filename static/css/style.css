@@ -203,6 +203,8 @@ html.dark .header {
     font-size: 2rem;
     margin-bottom: 1rem;
     line-height: 1.3;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .profile-subtitle {
@@ -931,6 +933,7 @@ html.dark .header {
     .profile-subtitle {
         font-size: 0.95rem;
         padding: 0 1rem;
+        overflow-wrap: break-word;
     }
 
     .profile-buttons {
