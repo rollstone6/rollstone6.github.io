@@ -207,6 +207,34 @@ hugo --minify
 - 添加 [搜索功能](/search/) 让读者快速定位内容
 - 在文章间建立交叉链接，形成知识网络
 
+## Hugo 模块化主题管理
+
+当你的博客逐渐复杂后，手动维护主题代码可能变得困难。Hugo 提供了强大的**模块化（Modules）系统**来管理主题和组件依赖：
+
+```bash
+# 初始化 Hugo Module
+hugo mod init github.com/yourusername/your-site
+
+# 引入 PaperMod 作为 Module
+hugo mod get github.com/adityatelange/hugo-PaperMod@latest
+
+# 更新所有模块
+hugo mod update
+```
+
+在 `hugo.toml` 中配置 module：
+
+```toml
+[module]
+  [[module.imports]]
+    path = "github.com/adityatelange/hugo-PaperMod"
+```
+
+这种方式的优势：
+- 📦 **版本控制** — 通过 Go Module 精确锁定版本
+- 🔄 **一键更新** — `hugo mod update` 即可更新所有依赖
+- 🧩 **组合使用** — 可以同时引入多个模块，分别覆盖不同功能
+
 ## 总结
 
 Hugo 是一个强大而简单的工具，非常适合构建个人博客和文档网站。它的速度优势和灵活性使其成为开发者的理想选择。
@@ -215,4 +243,4 @@ Hugo 是一个强大而简单的工具，非常适合构建个人博客和文档
 
 下一篇我将分享 [2026 年前端开发技术趋势](/posts/frontend-trends-2026/)，探讨前端领域的最新发展。
 
-> 📅 本文最后更新：2026 年 8 月 3 日。
+> 📅 本文最后更新：2026 年 8 月 10 日。
