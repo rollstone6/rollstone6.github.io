@@ -266,6 +266,87 @@ function ChatUI() {
 
 Popover API 自动处理焦点管理、点击外部关闭、层级堆叠等复杂逻辑，极大简化了前端开发。
 
+## 11. React Server Actions 与全栈融合
+
+2026 年，前端和后端开发的边界进一步模糊。React Server Actions 已经成为全栈开发的标准模式：
+
+### 什么是 Server Actions？
+
+Server Actions 允许你在客户端组件中直接调用服务端函数，无需手动编写 API 路由：
+
+```typescript
+// app/actions.ts
+"use server";
+
+export async function createPost(formData: FormData) {
+  const title = formData.get("title") as string;
+  const content = formData.get("content") as string;
+  
+  // 直接操作数据库
+  await db.posts.create({ title, content });
+  revalidatePath("/posts");
+}
+
+// app/posts/new/page.tsx
+import { createPost } from "@/app/actions";
+
+export default function NewPostPage() {
+  return (
+    <form action={createPost}>
+      <input name="title" placeholder="标题" />
+      <textarea name="content" placeholder="内容" />
+      <button type="submit">发布</button>
+    </form>
+  );
+}
+```
+
+### 优势与影响
+
+1. **减少样板代码** — 不再需要编写 `fetch()`、API 路由、类型定义三套代码
+2. **类型安全** — 从前端到数据库的端到端类型检查
+3. **渐进增强** — 即使 JavaScript 未加载，表单仍可提交
+4. **安全性** — 服务端逻辑不会暴露到客户端
+
+### 生态支持
+
+- **Next.js 15+** — 原生支持，生产可用
+- **Remix** — 通过 Action/Loader 模式实现类似功能
+- **RedwoodJS** — 内置 Service 层抽象
+
+这个趋势意味着前端开发者需要掌握更多后端知识，同时也降低了全栈开发的门槛。
+
+## 12. 声明式 UI 的进化
+
+2026 年，声明式 UI 继续演进，新的范式正在涌现：
+
+### Signals 统一状态管理
+
+Signals 正在成为跨框架的状态管理标准：
+
+```javascript
+// Preact Signals
+import { signal, computed, effect } from "@preact/signals";
+
+const count = signal(0);
+const doubled = computed(() => count.value * 2);
+
+effect(() => {
+  console.log(`Count: ${count.value}, Doubled: ${doubled.value}`);
+});
+
+// Vue 3.5+ 也原生支持 Signals
+// Angular 18+ 引入 Signals 作为核心响应式原语
+```
+
+### 编译时优化
+
+现代框架越来越多地将优化推到编译时：
+
+- **Svelte 5 Runes** — 编译时响应式，零运行时开销
+- **Solid.js** — 细粒度响应式，精确更新
+- **React Compiler** — 自动记忆化，无需手动 `useMemo`
+
 ## 总结
 
 2026 年的前端开发更加注重：
@@ -275,6 +356,8 @@ Popover API 自动处理焦点管理、点击外部关闭、层级堆叠等复�
 3. **开发体验** - 更好的工具和 AI 辅助
 4. **边缘计算** - 更靠近用户的部署
 5. **AI 融合** - Agent 驱动的交互范式
+6. **全栈融合** - Server Actions 模糊前后端边界
+7. **声明式进化** - Signals 和编译时优化
 
 作为开发者，保持学习和适应新技术是非常重要的。选择适合项目的技术，而不是盲目追求最新。
 
@@ -290,4 +373,4 @@ Popover API 自动处理焦点管理、点击外部关闭、层级堆叠等复�
 
 想了解更多关于我的技术栈和工作经历，可以查看我的[个人简历](/resume/)或[关于页面](/about/)。如果你想从零搭建自己的技术博客，推荐阅读我的 [Hugo 快速入门指南](/posts/hugo-quickstart/)。
 
-> 📅 本文最后更新：2026 年 8 月 10 日。内容已根据最新技术发展进行了审核和调整。
+> 📅 本文最后更新：2026 年 8 月 17 日。内容已根据最新技术发展进行了审核和调整。新增了 React Server Actions、Signals 统一状态管理和声明式 UI 进化章节。

@@ -66,6 +66,7 @@ tags: ["关于", "个人介绍"]
 - **Rust 与系统编程** — 学习 Rust 构建高性能工具，关注 [WebAssembly](/posts/frontend-trends-2026/) 在浏览器中的应用
 - **安全合规深化** — 深入研究零信任架构和供应链安全，结合 CISSP 知识体系
 - **浏览器新 API 实践** — 跟进 [WebGPU](/posts/frontend-trends-2026/)、Popover API、CSS Anchor Positioning 等新兴 Web 特性
+- **全栈开发进阶** — 学习 [React Server Actions](/posts/frontend-trends-2026/) 和边缘计算，探索现代全栈架构
 
 ## 📫 联系方式
 
@@ -89,4 +90,4 @@ tags: ["关于", "个人介绍"]
 
 如果你发现任何错误或想要交流，欢迎通过上述方式联系我！
 
-> 📅 最后更新：2026 年 8 月 10 日。
+> 📅 最后更新：2026 年 8 月 17 日。
