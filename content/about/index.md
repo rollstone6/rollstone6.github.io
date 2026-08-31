@@ -67,6 +67,8 @@ tags: ["关于", "个人介绍"]
 - **安全合规深化** — 深入研究零信任架构和供应链安全，结合 CISSP 知识体系
 - **浏览器新 API 实践** — 跟进 [WebGPU](/posts/frontend-trends-2026/)、Popover API、CSS Anchor Positioning 等新兴 Web 特性
 - **全栈开发进阶** — 学习 [React Server Actions](/posts/frontend-trends-2026/) 和边缘计算，探索现代全栈架构
+- **Web Codecs 与媒体处理** — 探索 [Web Codecs API](/posts/frontend-trends-2026/) 在视频处理和实时通信中的应用
+- **自动化与效率工具** — 结合 [Hugo 自动化工作流](/posts/hugo-quickstart/) 和 AI 工具提升内容创作效率
 
 ## 📫 联系方式
 
@@ -90,4 +92,4 @@ tags: ["关于", "个人介绍"]
 
 如果你发现任何错误或想要交流，欢迎通过上述方式联系我！
 
-> 📅 最后更新：2026 年 8 月 17 日。
+> 📅 最后更新：2026 年 8 月 31 日。新增学习方向和交叉链接。

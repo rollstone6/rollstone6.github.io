@@ -3,7 +3,7 @@ title: "Hugo 快速入门指南 - 从零搭建个人博客"
 date: 2026-06-02
 draft: false
 description: "从零开始学习 Hugo 静态网站生成器，快速搭建你的个人博客"
-tags: ["Hugo", "教程", "静态网站", "GitHub Pages", "AI", "自动化"]
+tags: ["Hugo", "教程", "静态网站", "GitHub Pages", "AI", "自动化", "性能监控"]
 ---
 
 ## 什么是 Hugo？
@@ -326,12 +326,125 @@ echo "✅ 检查完成"
 
 结合 AI 工具可以显著提升内容创作效率，但要记住：**AI 是辅助工具，核心洞察和实践经验仍然来自你自己**。
 
+## Hugo 短代码（Shortcodes）开发实战
+
+Hugo 的短代码系统是其最强大的扩展能力之一。短代码让你可以在 Markdown 中嵌入复杂的 HTML 组件，而无需手写原始 HTML。本站就使用了多个自定义短代码。
+
+### 内置短代码
+
+Hugo 自带了一些开箱即用的短代码：
+
+```markdown
+// 嵌入 YouTube 视频
+{{</* youtube id="xxxxx" */>}}
+
+// 嵌入 GitHub Gist
+{{</* gist user id */>}}
+
+// 图片加图注
+{{</* figure src="image.jpg" alt="描述" caption="图注" */>}}
+```
+
+### 自定义短代码开发
+
+当内置短代码无法满足需求时，你可以创建自己的短代码。本站创建了两个实用短代码：
+
+**1. 信息框短代码 `box.html`**
+
+在 `layouts/shortcodes/box.html` 中：
+
+```html
+<div class="info-box box-{{ .Get "type" }}">
+  <p>{{ .Inner | markdownify }}</p>
+</div>
+```
+
+使用方式：
+
+```markdown
+{{</* box type="tip" */>}}
+这是一个实用小技巧，可以帮助读者快速理解要点。
+{{</* /box */>}}
+```
+
+**2. 懒加载图片短代码 `img.html`**
+
+在 `layouts/shortcodes/img.html` 中：
+
+```html
+<figure class="lazy-image">
+  <img src="{{ .Get "src" }}" alt="{{ .Get "alt" }}" loading="lazy">
+  {{ with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+```
+
+使用方式：
+
+```markdown
+{{</* img src="/images/demo.png" alt="演示图片" caption="图 1: 效果展示" */>}}
+```
+
+### 短代码参数说明
+
+| 参数类型 | 语法 | 示例 |
+|----------|------|------|
+| 命名参数 | `.Get "name"` | `{{</* box type="warning" */>}}` |
+| 位置参数 | `.Get 0` | `{{</* myshortcode "value1" "value2" */>}}` |
+| 内容（Inner） | `.Inner` | 短代码标签之间的内容 |
+| 页面上下文 | `.Page` | 访问当前页面的 frontmatter |
+
+### 实践建议
+
+1. **保持短代码简单** — 每个短代码只负责一种功能
+2. **使用 CSS 类而非内联样式** — 方便统一管理和主题切换
+3. **提供默认值** — 让使用者可以用最少的参数完成基本功能
+4. **添加 `markdownify`** — 让短代码内部的内容也支持 Markdown 语法
+
+短代码是 Hugo 区别于其他静态网站生成器的核心竞争力之一。掌握短代码开发，你可以构建出高度可复用的内容组件系统。如果你想了解本站的完整功能特性，可以参考[开篇介绍](/posts/welcome/)中的建站思路。
+
+## 性能监控与分析工具
+
+网站上线后，持续的性能监控是确保用户体验的关键。以下是我推荐的工具链：
+
+### 前端性能监控
+
+```javascript
+// 使用 Performance API 监控页面性能
+const navigation = performance.getEntriesByType('navigation')[0];
+console.log(`DOM 加载时间: ${navigation.domContentLoadedEventEnd - navigation.startTime}ms`);
+console.log(`页面完全加载: ${navigation.loadEventEnd - navigation.startTime}ms`);
+
+// 监控 Core Web Vitals
+import { onCLS, onINP, onLCP } from 'web-vitals';
+
+onCLS(console.log);  // 累积布局偏移
+onINP(console.log);  // 交互到绘制延迟
+onLCP(console.log);  // 最大内容绘制
+```
+
+### 构建分析
+
+```bash
+# Hugo 构建详细报告
+hugo --gc --minify --templateMetrics
+
+# 分析输出文件大小
+du -sh public/*
+```
+
+### 在线监控服务
+
+- **Google PageSpeed Insights** — 性能评分和优化建议
+- **Lighthouse CI** — 自动化性能测试
+- **WebPageTest** — 真实网络环境测试
+- **GTmetrix** — 综合性能分析
+
+持续监控帮助及时发现性能退化，确保网站始终保持最佳状态。
+
 ## 总结
 
 Hugo 是一个强大而简单的工具，非常适合构建个人博客和文档网站。它的速度优势和灵活性使其成为开发者的理想选择。
 
-如果你刚刚开始使用 Hugo 搭建博客，可以参考[我的开篇介绍](/posts/welcome/)了解这个网站的构建过程。更多关于我的信息，请查看[关于页面](/about/)。
+如果你刚刚开始使用 Hugo 搭建博客，可以参考[我的开篇介绍](/posts/welcome/)了解这个网站的构建过程。更多关于我的信息，请查看[关于页面](/about/)。想了解更多前端技术发展方向，推荐阅读 [2026 年前端开发技术趋势](/posts/frontend-trends-2026/)。
 
-下一篇我将分享 [2026 年前端开发技术趋势](/posts/frontend-trends-2026/)，探讨前端领域的最新发展。
-
-> 📅 本文最后更新：2026 年 8 月 17 日。新增 AI 辅助 Hugo 创作工作流章节。
+> 📅 本文最后更新：2026 年 8 月 31 日。新增性能监控与分析工具章节。
