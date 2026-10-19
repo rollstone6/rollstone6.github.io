@@ -347,32 +347,6 @@ effect(() => {
 - **Solid.js** — 细粒度响应式，精确更新
 - **React Compiler** — 自动记忆化，无需手动 `useMemo`
 
-## 总结
-
-2026 年的前端开发更加注重：
-
-1. **性能** - 更快的加载和交互
-2. **类型安全** - 端到端的类型检查
-3. **开发体验** - 更好的工具和 AI 辅助
-4. **边缘计算** - 更靠近用户的部署
-5. **AI 融合** - Agent 驱动的交互范式
-6. **全栈融合** - Server Actions 模糊前后端边界
-7. **声明式进化** - Signals 和编译时优化
-
-作为开发者，保持学习和适应新技术是非常重要的。选择适合项目的技术，而不是盲目追求最新。
-
-## 📚 推荐资源
-
-如果你想深入了解上述技术，以下是几个值得关注的资源：
-
-- [MDN Web Docs](https://developer.mozilla.org/) — 最权威的 Web 技术文档
-- [web.dev](https://web.dev/) — Google 的 Web 开发者平台，包含性能优化最佳实践
-- [State of JS](https://stateofjs.com/) — 年度 JavaScript 生态调查
-- [Can I Use](https://caniuse.com/) — 浏览器兼容性查询工具
-- [webgpu.io](https://webgpu.io/) — WebGPU 规范和教程
-
-想了解更多关于我的技术栈和工作经历，可以查看我的[个人简历](/resume/)或[关于页面](/about/)。如果你想从零搭建自己的技术博客，推荐阅读我的 [Hugo 快速入门指南](/posts/hugo-quickstart/)。
-
 ## 13. 2026 年值得关注的新兴技术
 
 除了上述主流技术趋势，2026 年还有一些新兴技术值得开发者关注：
@@ -428,4 +402,30 @@ navigator.requestMIDIAccess().then(access => {
 
 这些新兴技术展示了 Web 平台的持续进化，为开发者提供了更强大的原生能力。
 
-> 📅 本文最后更新：2026 年 10 月 12 日。
+## 总结
+
+2026 年的前端开发更加注重：
+
+1. **性能** - 更快的加载和交互
+2. **类型安全** - 端到端的类型检查
+3. **开发体验** - 更好的工具和 AI 辅助
+4. **边缘计算** - 更靠近用户的部署
+5. **AI 融合** - Agent 驱动的交互范式
+6. **全栈融合** - Server Actions 模糊前后端边界
+7. **声明式进化** - Signals 和编译时优化
+
+作为开发者，保持学习和适应新技术是非常重要的。选择适合项目的技术，而不是盲目追求最新。
+
+## 📚 推荐资源
+
+如果你想深入了解上述技术，以下是几个值得关注的资源：
+
+- [MDN Web Docs](https://developer.mozilla.org/) — 最权威的 Web 技术文档
+- [web.dev](https://web.dev/) — Google 的 Web 开发者平台，包含性能优化最佳实践
+- [State of JS](https://stateofjs.com/) — 年度 JavaScript 生态调查
+- [Can I Use](https://caniuse.com/) — 浏览器兼容性查询工具
+- [webgpu.io](https://webgpu.io/) — WebGPU 规范和教程
+
+想了解更多关于我的技术栈和工作经历，可以查看我的[个人简历](/resume/)或[关于页面](/about/)。如果你想从零搭建自己的技术博客，推荐阅读我的 [Hugo 快速入门指南](/posts/hugo-quickstart/)。
+
+> 📅 本文最后更新：2026 年 10 月 19 日。
