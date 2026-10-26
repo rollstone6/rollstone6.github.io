@@ -18,6 +18,8 @@ theme = "PaperMod"
   ShowCodeCopyButtons = true
   ShowToc = true
   TocOpen = false
+  # 打字动画短语 (来自 developer-portfolio 项目)
+  typingPhrases = ["全栈开发工程师", "开源爱好者", "技术写作者", "终身学习者", "问题解决者"]
 
   [params.homeInfoParams]
     Title = "👋 欢迎来到我的个人网站"

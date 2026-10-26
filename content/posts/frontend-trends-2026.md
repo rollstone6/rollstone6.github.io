@@ -1,6 +1,7 @@
 ---
 title: "2026 现代前端开发技术趋势 - React、Vite、AI 全解析"
 date: 2026-06-02
+lastmod: 2026-10-26
 draft: false
 description: "探讨 2026 年前端开发领域的最新趋势和技术方向"
 tags: ["前端", "JavaScript", "技术趋势", "CSS", "AI", "Web Codecs", "新兴技术"]
@@ -428,4 +429,4 @@ navigator.requestMIDIAccess().then(access => {
 
 想了解更多关于我的技术栈和工作经历，可以查看我的[个人简历](/resume/)或[关于页面](/about/)。如果你想从零搭建自己的技术博客，推荐阅读我的 [Hugo 快速入门指南](/posts/hugo-quickstart/)。
 
-> 📅 本文最后更新：2026 年 10 月 19 日。
+> 📅 本文最后更新：2026 年 10 月 26 日。

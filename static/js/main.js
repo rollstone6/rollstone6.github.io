@@ -26,7 +26,7 @@
     const el = document.getElementById('typed-text');
     if (!el) return;
     const phrases = JSON.parse(el.dataset.phrases || '[]');
-    if (!phrases.length) return;
+    if (!Array.isArray(phrases) || !phrases.length) return;
     let pi = 0, ci = 0, deleting = false;
     function tick() {
         const word = phrases[pi];

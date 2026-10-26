@@ -1,6 +1,7 @@
 ---
 title: "📄 个人简历"
 date: 2026-06-15
+lastmod: 2026-10-26
 draft: false
 description: "应金益 - IT审计与测试开发工程师个人简历，包含教育背景、工作经历、项目成果和技能清单"
 layout: "resume"
