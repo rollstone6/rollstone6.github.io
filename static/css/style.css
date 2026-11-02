@@ -910,6 +910,9 @@ html.dark .header {
 
     .archives-list a {
         word-break: break-word;
+        padding: 0.5rem 0;
+        display: inline-block;
+        min-height: 44px;
     }
 
     /* Recent posts section heading */
