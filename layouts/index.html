@@ -2,6 +2,9 @@
 <section class="home-profile">
     {{ with .Site.Params.profileMode }}
     <div class="profile-card">
+        {{ if .imageUrl }}
+        <img class="profile-avatar" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "头像" }}" width="120" height="120">
+        {{ end }}
         <h1 class="profile-title">{{ .title | markdownify }}</h1>
         <p class="profile-subtitle">{{ .subtitle | markdownify }}</p>
         <p class="profile-subtitle">

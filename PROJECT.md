@@ -37,9 +37,7 @@
 
 ### ❌ 已知问题
 
-1. **头像图片未设置** — `profileMode.imageUrl` 为空
-
-2. **社交链接** — Twitter/X 链接还是占位符
+（无 — 头像已于 2026-11-03 设置；Twitter/X 占位链接此前已清理，socialIcons 现为 GitHub/邮箱/RSS 三个真实链接）
 
 ## 📖 GitHub Pages 官方文档参考对照
 
@@ -114,8 +112,8 @@
 - [x] 定时内容优化（2026-10-19）：修复 frontend-trends-2026 章节排序（第13节"新兴技术"移至"总结"之前）、全站更新日期统一至 2026-10-19、welcome 最新动态刷新；验证构建（78页无警告）、站内链接零死链、RSS/sitemap/搜索索引正常、移动端 CSS 断点复查无回归（浏览器工具不可用，改用静态分析）。⚠️ 新发现：og-default.jpg 与 favicon.ico 缺失（404）、static/images/ 目录为空、Twitter/X 链接仍为占位符
 - [x] 定时内容优化（2026-10-26）：🔴 修复首页 JS 致命 Bug——typingPhrases 误置于 hugo.toml 顶层而非 [params]，导致 data-phrases=null、打字动画抛异常并中断 main.js 后续初始化，首页汉堡菜单与搜索浮层全部失效；同时为 main.js 增加 Array.isArray 防御。补全全站 7 个内容页 lastmod（此前 sitemap lastmod 停留在 6 月）、更新日期统一至 2026-10-26。移动端改用 Playwright+Chromium 实测：375px/768px 抽屉导航、搜索浮层（关键词检索出结果）、深色模式切换、代码块横向滚动均正常；发现次要问题：归档页文章链接点击高度 26px 偏小、导航 logo 12.5px 字号偏小（仅建议级）。构建验证 78 页无警告、线上 16 项资源全 200、无死链
 - [x] 定时内容优化（2026-11-02）：清理 hugo.toml 中残留的重复顶层 typingPhrases（上次修复时 [params] 内外各留一份，现仅保留 [params] 内）；WebGPU 资源链接由 webgpu.io 更正为官方 webgpu.org；全站 lastmod/更新日期统一至 2026-11-02、welcome 最新动态刷新；移动端 Playwright 实测 375px/768px：无 JS 报错、无横向溢出，抽屉导航/搜索浮层（'Hugo'命中2条）/独立搜索页（'前端'命中1条）/深色模式/代码块 overflow-x:auto 全部正常；🎯 修复上周遗留问题：≤768px 归档页文章链接触摸高度 15-26px → 44-68px（符合 44px 可点击区域规范）。注意：实测发现 CSS 规则若被后续断点重复声明会互相覆盖，修改断点样式需检查是否有重复选择器。构建 78 页无警告、站内链接零死链、外部 12 个引用域名 DNS 均可解析（x.com/web.dev/stateofjs.com 因沙箱出网限制无法直接验证 HTTP 状态，DNS 正常，判定风险低）。⚠️ 长期项：Hugo 最新 v0.169.0（2026-10-27）vs 本地 v0.154.5，建议 CI 固定版本或择期升级；Twitter/X 链接仍为占位、头像仍未设置
-- [ ] 设置头像图片
-- [ ] 更新 Twitter/X 社交链接
+- [x] 设置头像图片（2026-11-03）：AI 生成动漫风开发者头像（Pollinations flux，512×512，cv2 inpaint 去水印）→ `static/images/avatar.jpg`；首页 profileMode 圆形头像 + 简历页 hero 头像（替换"应"字占位）；Playwright 实测桌面 1280px / 移动 375px 渲染正常、深色模式边框自适应
+- [x] 更新 Twitter/X 社交链接（2026-11-03 确认）：占位符已移除，socialIcons 为 GitHub(rollstone6)/邮箱/RSS
 - [ ] 完善关于页信息
 - [ ] 添加更多博客文章
 
