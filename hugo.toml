@@ -45,11 +45,11 @@ theme = "PaperMod"
   imageTitle = "我的头像"
 
   [[params.profileMode.buttons]]
-    name = "📝 博客"
+    name = "博客"
     url = "/posts/"
 
   [[params.profileMode.buttons]]
-    name = "👤 关于"
+    name = "关于"
     url = "/about/"
 
 [markup]
@@ -75,26 +75,26 @@ ignoreLogs = ['warning-goldmark-raw-html']
 [menu]
   [[menu.main]]
     identifier = "archives"
-    name = "📦 归档"
+    name = "归档"
     url = "/archives/"
     weight = 1
   [[menu.main]]
     identifier = "posts"
-    name = "📝 博客"
+    name = "博客"
     url = "/posts/"
     weight = 2
   [[menu.main]]
     identifier = "resume"
-    name = "📄 简历"
+    name = "简历"
     url = "/resume/"
     weight = 3
   [[menu.main]]
     identifier = "about"
-    name = "👤 关于"
+    name = "关于"
     url = "/about/"
     weight = 4
   [[menu.main]]
     identifier = "search"
-    name = "🔍 搜索"
+    name = "搜索"
     url = "/search/"
     weight = 4

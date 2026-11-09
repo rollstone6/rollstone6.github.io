@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section class="notfound">
+    <h1 class="notfound-code">404</h1>
+    <p class="notfound-title">这条路径没有故事</p>
+    <p class="notfound-text">页面也许从未存在，也许已经搬家。不如去这些地方看看：</p>
+    <div class="notfound-actions">
+        <a class="btn" href="{{ .Site.BaseURL }}">回首页</a>
+        <a class="btn btn-ghost" href="{{ "posts/" | absURL }}">全部文章</a>
+        <a class="btn btn-ghost" href="{{ "archives/" | absURL }}">归档</a>
+    </div>
+</section>
+{{ end }}
