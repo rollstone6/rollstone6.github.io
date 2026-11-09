@@ -1,7 +1,7 @@
 ---
 title: "关于我"
 date: 2026-06-02
-lastmod: 2026-11-02
+lastmod: 2026-11-09
 draft: false
 description: "关于博主 rollstone6 的个人介绍、技术栈、兴趣方向和联系方式"
 tags: ["关于", "个人介绍", "技术博客", "开发者", "Web开发", "职业发展", "联系方式"]
@@ -75,7 +75,6 @@ tags: ["关于", "个人介绍", "技术博客", "开发者", "Web开发", "职�
 
 - **GitHub**: [github.com/rollstone6](https://github.com/rollstone6)
 - **Email**: hello@yjyblog.xyz
-- **Twitter/X**: [@rollstone6](https://x.com/rollstone6)
 
 ## 🌟 关于这个网站
 
